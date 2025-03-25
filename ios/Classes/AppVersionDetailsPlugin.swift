@@ -9,11 +9,17 @@ public class AppVersionDetailsPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    switch call.method {
-    case "getPlatformVersion":
-      result("iOS " + UIDevice.current.systemVersion)
-    default:
-      result(FlutterMethodNotImplemented)
+    if call.method == "getAppVersion" {
+        if let infoDictionary = Bundle.main.infoDictionary,
+            let versionName = infoDictionary["CFBundleShortVersionString"] as? String,
+            let versionCode = infoDictionary["CFBundleVersion"] as? String {
+            let versionInfo = "\(versionName)+\(versionCode)"
+            result(versionInfo)
+        } else {
+            result(FlutterError(code: "ERROR", message: "Failed to get version info", details: nil))
+        }
+    } else {
+        result(FlutterMethodNotImplemented)
     }
   }
 }
