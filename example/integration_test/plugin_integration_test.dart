@@ -7,17 +7,16 @@
 // https://flutter.dev/to/integration-testing
 
 
+import 'package:app_version_details/app_version_details.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-
-import 'package:app_version_details/app_version_details.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('getPlatformVersion test', (WidgetTester tester) async {
+  testWidgets('getAppVersion test', (WidgetTester tester) async {
     final AppVersionDetails plugin = AppVersionDetails();
-    final String? version = await plugin.getPlatformVersion();
+    final String? version = await plugin.getAppVersion();
     // The version string depends on the host platform running the test, so
     // just assert that some non-empty string is returned.
     expect(version?.isNotEmpty, true);

@@ -1,7 +1,7 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:app_version_details/app_version_details.dart';
-import 'package:app_version_details/app_version_details_platform_interface.dart';
 import 'package:app_version_details/app_version_details_method_channel.dart';
+import 'package:app_version_details/app_version_details_platform_interface.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockAppVersionDetailsPlatform
@@ -9,7 +9,7 @@ class MockAppVersionDetailsPlatform
     implements AppVersionDetailsPlatform {
 
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<String?> getAppVersion() => Future.value('1.0.0+1');
 }
 
 void main() {
@@ -24,6 +24,6 @@ void main() {
     MockAppVersionDetailsPlatform fakePlatform = MockAppVersionDetailsPlatform();
     AppVersionDetailsPlatform.instance = fakePlatform;
 
-    expect(await appVersionDetailsPlugin.getPlatformVersion(), '42');
+    expect(await appVersionDetailsPlugin.getAppVersion(), '1.0.0+1');
   });
 }
