@@ -7,13 +7,13 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockAppVersionDetailsPlatform
     with MockPlatformInterfaceMixin
     implements AppVersionDetailsPlatform {
-
   @override
   Future<String?> getAppVersion() => Future.value('1.0.0+1');
 }
 
 void main() {
-  final AppVersionDetailsPlatform initialPlatform = AppVersionDetailsPlatform.instance;
+  final AppVersionDetailsPlatform initialPlatform =
+      AppVersionDetailsPlatform.instance;
 
   test('$MethodChannelAppVersionDetails is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelAppVersionDetails>());
@@ -21,7 +21,8 @@ void main() {
 
   test('getPlatformVersion', () async {
     AppVersionDetails appVersionDetailsPlugin = AppVersionDetails();
-    MockAppVersionDetailsPlatform fakePlatform = MockAppVersionDetailsPlatform();
+    MockAppVersionDetailsPlatform fakePlatform =
+        MockAppVersionDetailsPlatform();
     AppVersionDetailsPlatform.instance = fakePlatform;
 
     expect(await appVersionDetailsPlugin.getAppVersion(), '1.0.0+1');

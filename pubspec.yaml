@@ -1,6 +1,6 @@
 name: app_version_details
 description: "A simple plugin to fetch the app version across android and ios platforms. Useful for displaying version info in your app or checking for updates."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/sivaprasadnk/app_version_details
 
 environment:

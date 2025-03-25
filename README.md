@@ -8,7 +8,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  app_version_details: ^0.0.1
+  app_version_details: ^0.0.2
 ```
 
 ## Usage
