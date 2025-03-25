@@ -66,6 +66,5 @@ void main() async {
 
 Pull requests are welcome! If you have any major changes in mind, please open an issue first to discuss them.
 
----
+
 Made with ❤️ for Flutter developers!
-```
