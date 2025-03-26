@@ -1,6 +1,6 @@
 # App Version Details
 
-A simple, **lightweight**, and **dependency-free** Flutter plugin to retrieve the app's version name and build number on both Android and iOS.
+A lightweight alternative for retrieving the app's version name and build number on Android and iOS, replacing the package_info_plus plugin, which adds multiple dependencies under the hood and increases app size.
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  app_version_details: ^0.0.3
+  app_version_details: ^1.0.0
 ```
 
 ## Usage
