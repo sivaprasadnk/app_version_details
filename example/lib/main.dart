@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       version =
-          await _appVersionDetailsPlugin.getAppVersion() ??
+          await _appVersionDetailsPlugin.getVersion() ??
           'Unknown app version';
     } on PlatformException {
       version = 'Failed to get app version.';

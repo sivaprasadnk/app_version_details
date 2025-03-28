@@ -15,7 +15,7 @@ void main() {
 
   testWidgets('getAppVersion test', (WidgetTester tester) async {
     final AppVersionDetails plugin = AppVersionDetails();
-    final String? version = await plugin.getAppVersion();
+    final String? version = await plugin.getVersion();
     // The version string depends on the host platform running the test, so
     // just assert that some non-empty string is returned.
     expect(version?.isNotEmpty, true);

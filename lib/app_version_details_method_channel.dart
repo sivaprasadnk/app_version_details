@@ -10,7 +10,7 @@ class MethodChannelAppVersionDetails extends AppVersionDetailsPlatform {
   final methodChannel = const MethodChannel('app_version_details');
 
   @override
-  Future<String?> getAppVersion() async {
+  Future<String?> getVersion() async {
     final version = await methodChannel.invokeMethod<String>('getAppVersion');
     return version;
   }

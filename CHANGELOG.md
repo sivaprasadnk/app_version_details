@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Refactored method names for better readability and consistency.
+
 ## 1.0.0
 
 * Readme updated.

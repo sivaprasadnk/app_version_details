@@ -8,7 +8,7 @@ class MockAppVersionDetailsPlatform
     with MockPlatformInterfaceMixin
     implements AppVersionDetailsPlatform {
   @override
-  Future<String?> getAppVersion() => Future.value('1.0.0+1');
+  Future<String?> getVersion() => Future.value('1.0.0+1');
 }
 
 void main() {
@@ -19,12 +19,12 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelAppVersionDetails>());
   });
 
-  test('getPlatformVersion', () async {
+  test('getAppVersion', () async {
     AppVersionDetails appVersionDetailsPlugin = AppVersionDetails();
     MockAppVersionDetailsPlatform fakePlatform =
         MockAppVersionDetailsPlatform();
     AppVersionDetailsPlatform.instance = fakePlatform;
 
-    expect(await appVersionDetailsPlugin.getAppVersion(), '1.0.0+1');
+    expect(await appVersionDetailsPlugin.getVersion(), '1.0.0+1');
   });
 }
