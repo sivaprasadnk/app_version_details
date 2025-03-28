@@ -17,7 +17,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _appVersion = 'Unknown';
-  final _appVersionDetailsPlugin = AppVersionDetails();
 
   @override
   void initState() {
@@ -32,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       version =
-          await _appVersionDetailsPlugin.getVersion() ??
+          await AppVersionDetails().getVersion() ??
           'Unknown app version';
     } on PlatformException {
       version = 'Failed to get app version.';

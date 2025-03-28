@@ -8,7 +8,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  app_version_details: ^1.0.1
+  app_version_details: ^1.0.2
 ```
 
 ## Usage
@@ -23,8 +23,8 @@ Then, call `getAppVersion()` to fetch the app version:
 
 ```dart
 void main() async {
-  String? version = await AppVersionInfo.getAppVersion();
-  print("App Version: $version");
+  String? version = await AppVersionDetails().getAppVersion();
+  print("$version");
 }
 ```
 ### Example Output:
@@ -35,12 +35,12 @@ Where:
 - `1.0.0` is the version name.
 - `100` is the build number.
 
-Call `getAppVersionName()` to fetch the app version number:
+Call `getVersionName()` to fetch the app version number:
 
 ```dart
 void main() async {
-  String? versionName = await AppVersionInfo.getAppVersionName();
-  print("App Version Name: $versionName");
+  String? versionName = await AppVersionDetails().getVersionName();
+  print("$versionName");
 }
 ```
 ### Example Output:
@@ -48,12 +48,12 @@ void main() async {
 1.0.0
 ```
 
-Call `getAppBuildNumber()` to fetch the app build number:
+Call `getBuildNumber()` to fetch the app build number:
 
 ```dart
 void main() async {
-  String? buildNumber = await AppVersionInfo.getAppBuildNumber();
-  print("App Build Number: $buildNumber");
+  String? buildNumber = await AppVersionDetails().getBuildNumber();
+  print("$buildNumber");
 }
 ```
 
