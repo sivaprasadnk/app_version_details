@@ -26,4 +26,9 @@ abstract class AppVersionDetailsPlatform extends PlatformInterface {
   Future<String?> getVersion() {
     throw UnimplementedError('appVersion() has not been implemented.');
   }
+
+  Future<String?> getPackageName() {
+    throw UnimplementedError('getPackageName() has not been implemented.');
+  }
+
 }

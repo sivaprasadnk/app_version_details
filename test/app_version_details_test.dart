@@ -9,6 +9,10 @@ class MockAppVersionDetailsPlatform
     implements AppVersionDetailsPlatform {
   @override
   Future<String?> getVersion() => Future.value('1.0.0+1');
+  
+  @override
+  Future<String?> getPackageName() => Future.value('com.example.name');
+  
 }
 
 void main() {

@@ -17,24 +17,37 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _appVersion = 'Unknown';
+  String _packageName = 'Unknown';
 
   @override
   void initState() {
     super.initState();
     getVersion();
+    getPackageName();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> getVersion() async {
     String version;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
     try {
-      version =
-          await AppVersionDetails().getVersion() ??
-          'Unknown app version';
+      version = await AppVersionDetails().getVersion() ?? 'Unknown app version';
     } on PlatformException {
       version = 'Failed to get app version.';
+    }
+
+    if (!mounted) return;
+
+    setState(() {
+      _appVersion = version;
+    });
+  }
+
+  Future<void> getPackageName() async {
+    String name;
+    try {
+      name =
+          await AppVersionDetails().getPackageName() ?? 'Unknown package name';
+    } on PlatformException {
+      name = 'Failed to get package name.';
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -43,7 +56,7 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
 
     setState(() {
-      _appVersion = version;
+      _packageName = name;
     });
   }
 
@@ -52,7 +65,13 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Plugin example app')),
-        body: Center(child: Text('App Version : $_appVersion')),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("App Version :$_appVersion"),
+            Text("Package Name :$_packageName"),
+          ],
+        ),
       ),
     );
   }

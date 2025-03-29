@@ -36,7 +36,9 @@ class AppVersionDetailsPlugin: FlutterPlugin, MethodCallHandler {
       } catch (e: PackageManager.NameNotFoundException) {
         result.error("ERROR", "Failed to get version info", null)
       }
-    } else {
+    } else if(call.method =="getPackageName") {
+      result.success(packageName);
+    }else{
       result.notImplemented()
     }
   }

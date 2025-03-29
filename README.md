@@ -1,6 +1,6 @@
 # App Version Details
 
-A lightweight alternative for retrieving the app's version name and build number on Android and iOS, replacing the package_info_plus plugin, which adds multiple dependencies under the hood and increases app size.
+A lightweight alternative for retrieving the app's version, build number and packagename on Android and iOS, replacing the package_info_plus plugin, which adds multiple dependencies under the hood and increases app size.
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  app_version_details: ^1.0.2
+  app_version_details: ^1.0.3
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ Where:
 - `1.0.0` is the version name.
 - `100` is the build number.
 
-Call `getVersionName()` to fetch the app version number:
+Call `getVersionName()` to fetch the app version name:
 
 ```dart
 void main() async {
@@ -60,6 +60,20 @@ void main() async {
 ### Example Output:
 ```
 100
+```
+
+Call `getPackageName()` to fetch the package-name:
+
+```dart
+void main() async {
+  String? name = await AppVersionDetails().getPackageName();
+  print("$name");
+}
+```
+
+### Example Output:
+```
+com.example.package
 ```
 
 ## Contributing

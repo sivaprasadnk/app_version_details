@@ -1,3 +1,7 @@
+## 1.0.3
+
+* Added method to fetch package name
+
 ## 1.0.2
 
 * Readme corrected

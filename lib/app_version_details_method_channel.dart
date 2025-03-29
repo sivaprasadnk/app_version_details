@@ -14,4 +14,10 @@ class MethodChannelAppVersionDetails extends AppVersionDetailsPlatform {
     final version = await methodChannel.invokeMethod<String>('getAppVersion');
     return version;
   }
+
+  @override
+  Future<String?> getPackageName() async {
+    final version = await methodChannel.invokeMethod<String>('getPackageName');
+    return version;
+  }
 }
